@@ -1,0 +1,34 @@
+<mxfile host="app.diagrams.net" modified="2024-02-17T18:53:16.043Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="PvtbwVGFv9epTBXL892f" version="22.1.21" type="device">
+  <diagram name="Page-1" id="qv5yF5oG5WKMkOyFcO01">
+    <mxGraphModel dx="794" dy="459" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="W94eJEJe5oBjj1_Gli3S-1" value="Front end UI&lt;br&gt;(React)" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="240" y="90" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="W94eJEJe5oBjj1_Gli3S-2" value="Backend API&lt;br&gt;(Python)&lt;br&gt;(Django)" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="345" y="169" width="61" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="W94eJEJe5oBjj1_Gli3S-3" value="Dynamo DB" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="480" y="169" width="61" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="W94eJEJe5oBjj1_Gli3S-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="W94eJEJe5oBjj1_Gli3S-1" target="W94eJEJe5oBjj1_Gli3S-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="230" as="sourcePoint" />
+            <mxPoint x="300" y="180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="270" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W94eJEJe5oBjj1_Gli3S-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="W94eJEJe5oBjj1_Gli3S-2" target="W94eJEJe5oBjj1_Gli3S-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="360" as="sourcePoint" />
+            <mxPoint x="510" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
