@@ -18,3 +18,8 @@ Create initial react application
     ```
 * _npm install_
 * _npm start_
+
+_____
+
+
+[Resource](https://www.youtube.com/watch?v=tEMrD9t85v4)
