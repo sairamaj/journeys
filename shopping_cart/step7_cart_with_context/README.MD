@@ -51,6 +51,32 @@ ___
   useful in react html generation.
   
 </details>
+
+<details>
+   <summary>setState update asynchronous</summary>
+
+```txt
+In React, state updates are inherently asynchronous processes. When you call the setState function, React schedules an update rather than immediately applying the changes. This allows React to batch multiple state updates together, minimizing unnecessary re-renders and improving overall efficiency.
+```
+* useEffect to get updates 
+  ```javascript
+    useEffect(() => {
+        updateSubTotal();
+    });
+
+  ```
+
+</details>
+
+<details>
+  <summary>Build</summary>
+
+```cmd
+  yarn build
+  ; OR
+  npm run build
+```
+</details>
 ____
 
 ## Resource

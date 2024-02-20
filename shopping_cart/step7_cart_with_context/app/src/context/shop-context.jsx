@@ -1,4 +1,4 @@
-import { React, createContext, useState } from 'react';
+import { React, createContext, useState, useEffect } from 'react';
 import { PRODUCTS } from '../products.js'
 export const ShopContext = createContext(null);
 
@@ -13,6 +13,7 @@ const getDefaultCart = () => {
 
 export const ShopContextProvider = (props) => {
     const [ cartItems, setCartItems ] = useState(getDefaultCart());
+    const [ subTotal, setSubTotal] = useState(0);
 
     const addToCart = (itemId) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
@@ -22,7 +23,27 @@ export const ShopContextProvider = (props) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
     }
 
-    const contextValue = { cartItems, addToCart, removeFromCart };
+    const updateCartQuantity = (itemId, quantity) => {
+        setCartItems( (prev) => ({...prev, [itemId]: prev[itemId] = quantity}) )
+    }
+
+    useEffect(() => {
+        updateSubTotal();
+    });
+
+    const updateSubTotal = () => {
+        // go through each cart
+        var subtotal = 0
+        for(var item in cartItems){
+            var product = PRODUCTS.find(p => p.id == item);
+            if(cartItems[item] > 0){
+                subtotal += product.price * cartItems[item]
+            }
+        }
+        setSubTotal(subtotal);
+    }
+
+    const contextValue = { cartItems, addToCart, removeFromCart , updateCartQuantity, subTotal};
     return <ShopContext.Provider value={contextValue}>
         {props.children}
     </ShopContext.Provider>
