@@ -1,3 +1,7 @@
+import { Contacts } from '../features/contacts/contactsPage';
+
 export default function App() {
-    return <div>Hello!</div>;
-  }
+    return <div>
+        <Contacts />
+    </div>;
+}
