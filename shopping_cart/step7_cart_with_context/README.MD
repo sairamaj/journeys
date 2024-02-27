@@ -1,10 +1,6 @@
 # Goal
     Display the cart
-____
-## Details
-____
 
-## UI
 ___
 
 ## Learning

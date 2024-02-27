@@ -27,11 +27,6 @@ ____
 ____
 
 <details>
-   <summary>Resources</summary>
-</details>
-
-_____
-<details>
    <summary>Research</summary>
 
 * Immutability in react
