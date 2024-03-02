@@ -22,6 +22,11 @@ export const fetchContacts = createAsyncThunk('contacts/fetchContacts', async ()
     ]
 });
 
+export const addContact = createAsyncThunk('contacts/addContact', async (contact) => {
+    console.log(`addContact thunk: ${contact}`);
+    return contact
+});
+
 
 const contactsSlice = createSlice({
     name: 'contacts',
@@ -43,6 +48,11 @@ const contactsSlice = createSlice({
                 console.log('in fetchContacts.rejected')
                 state.status = 'failed'
                 state.error = action.error.message
+            })
+            .addCase(addContact.fulfilled, (state, action) => {
+                console.log('in addContact fulfilled reducer')
+                state.status = 'succeeded'
+                state.contacts = state.contacts.concat(action.payload)
             })
             .addDefaultCase(msg => {
                 // console.log(`default: state:${msg}`)

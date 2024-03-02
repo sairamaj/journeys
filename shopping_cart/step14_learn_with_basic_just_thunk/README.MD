@@ -119,9 +119,42 @@ ___
 * you will see the fetchContacts being called in console log
 ![contacts_thunk_called](./contacts_thunk_called.png)
 
-__Note__: Thunk Being called twice , that is because the state is not changed from _idle_. we need to add reducer to change this.
-
 </details>
+
 ___
 
-# Learning
+<details>
+  <summary>add new contact</summary>
+
+* _addContact_ thunk in slice
+```js
+  export const addContact = createAsyncThunk('contacts/addContact', async (contact) => {
+      console.log(`addContact thunk: ${contact}`);
+      return contact
+  });
+
+```
+* _reducer_ for add contact in slice
+```js
+  .addCase(addContact.fulfilled, (state, action) => {
+      console.log('in addContact fulfilled reducer')
+      state.status = 'succeeded'
+      state.contacts = state.contacts.concat(action.payload)
+  })
+```
+* _dispatch_ in component for add contact
+```js
+  import { fetchContacts, addContact } from './contactsSlice'
+
+  const saveContact = () => {
+      console.log('adding contact here.')
+      dispatch(
+          addContact({ name: 'new-contact', email: 'new-contact@abc.com', phone: '000-111-2222' }))
+  }
+
+<button onClick={saveContact}>Add Contact</button>
+```
+
+![add_new_contact](add_new_contact.png)
+
+</details>

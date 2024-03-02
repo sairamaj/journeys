@@ -1,6 +1,6 @@
 import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchContacts } from './contactsSlice'
+import { fetchContacts, addContact } from './contactsSlice'
 
 export const Contacts = () => {
 
@@ -22,13 +22,15 @@ export const Contacts = () => {
         content = <div>loading</div>
     } else if (contactsStatus == "succeeded") {
         content = contacts.map(c => {
-            return <div>{c.name}</div>
+            return <div key={c.name}>{c.name}</div>
         })
     } else {
         content = <div>{error}</div>
     }
-    const addContact = () => {
+    const saveContact = () => {
         console.log('adding contact here.')
+        dispatch(
+            addContact({ name: 'new-contact', email: 'new-contact@abc.com', phone: '000-111-2222' }))
     }
     const updateContact = () => {
         console.log('update contact here.')
@@ -46,7 +48,7 @@ export const Contacts = () => {
             <div>
             </div><br />
             <div>
-                <button onClick={addContact}>Add Contact</button>
+                <button onClick={saveContact}>Add Contact</button>
             </div><br />
             <div>
                 <button onClick={updateContact}>Update Contact</button>
