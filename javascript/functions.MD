@@ -39,7 +39,7 @@ ___
 ___
 
 <details>
-   <summary>function returning functions</summart>
+   <summary>function returning functions</summary>
 
 ```js
     // function returning function

@@ -141,29 +141,6 @@ ___
 ___
 
 <details>
-  <summary>if else logic assign to a variable</summary>
-
-```js
-    age = 10
-
-    // using let keyword to assign the output of logic
-    let message
-
-    if (age >= 18) {
-      message = "You are an adult.";
-    } else if (age >= 13) {
-      message = "You are a teenager.";
-    } else {
-      message = "You are a child.";
-    }
-
-    console.log(message)
-```
-</details>
-
-___
-
-<details>
   <summary>rest parameters</summary>
 
 ```js
