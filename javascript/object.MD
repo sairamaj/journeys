@@ -186,3 +186,76 @@ ___
   </details>
 
 </details>
+
+___
+
+<details>
+  <summary>object in object</summary>
+
+```js
+var person = {
+    name: 's1',
+    address: {
+        line1: "17",
+        line2: "tucston st",
+        zip: 97006
+    }
+}
+
+console.log(person.name)
+console.log(person.address)
+console.log(person.address.line1)
+```
+
+</details>
+
+___
+
+<details>
+  <summary>constructor</summary>
+
+```js
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+var p1 = new Person('s1', 10);
+var p2 = new Person('s2', 20);
+
+console.log(p1, p2);
+```
+
+[more](https://www.w3schools.com/js/js_object_constructors.asp)
+</details>
+
+___
+
+<details>
+  <summary>prototype</summary>
+
+* todo
+
+</details>
+
+___
+
+<details>
+  <summary>destructring</summary>
+
+* useful in passing object which has properties without specifying exact properties
+    ```js
+    var person = { name: 'sai', age: 16, gender: 'M' }
+
+    // extracting just name
+    var { name } = person
+    console.log(name)
+
+    // function which takes object and destructures the properties
+    function print({ name, age }) {
+      console.log(`name:${name} age:${age}`)
+    }
+
+    print(person)
+    ```
+</details>

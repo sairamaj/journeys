@@ -58,7 +58,21 @@ Document high level of our understanding of Redux concepts in our own way
         }
   ```
    * __Note:__ we have used _state.push_ which looks like mutable code. But in reality when redux runs the reducer code , it runs through _immer_ library which takes care of creating new object. 
+* reducers are pure as they don't change anything outside their scope.we can't do any API calls or dispatch actions from inside reducer. 
 
+* reducer logic
+  * either it can update state.
+    ```js
+      state.posts = state.posts.concat('test')
+    ```
+  * or __return__ data where redux __Immer__ library can __update the state__
+    ```js
+      return [
+        {
+          id: 1
+        }
+      ] 
+    ```
 </details>
 
 <details>

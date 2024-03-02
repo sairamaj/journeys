@@ -137,3 +137,84 @@ ___
   </details>
 
 </details>
+
+___
+
+<details>
+  <summary>if else logic assign to a variable</summary>
+
+```js
+    age = 10
+
+    // using let keyword to assign the output of logic
+    let message
+
+    if (age >= 18) {
+      message = "You are an adult.";
+    } else if (age >= 13) {
+      message = "You are a teenager.";
+    } else {
+      message = "You are a child.";
+    }
+
+    console.log(message)
+```
+</details>
+
+___
+
+<details>
+  <summary>rest parameters</summary>
+
+```js
+  // rest operator
+  // below we are passig 
+  function add(x,y, ...nums){
+    console.log('x:', x)
+    console.log('y:', y);
+    console.log('rest:',nums)
+  }
+
+  add(1,2,4,5,6,7)
+```
+```cmd
+x: 1
+y: 2
+rest: [ 4, 5, 6, 7 ]
+```
+
+</details>
+
+___
+
+<details>
+  <summary>spread</summary>
+
+```js
+  let x = [1, 2, 3]
+  let y = [4, 5]
+  let z = [7, 8, 9]
+
+  // spread operator to join
+  let result = [...x, ...y, ...z]
+  console.log(result)
+  console.log('---------')
+
+  // extract using spread operator
+  const [one, two, ...rest] = result
+  console.log('one:', one);
+  console.log('two:', two)
+  console.log('rest:', rest)
+```
+```cmd
+[
+  1, 2, 3, 4,
+  5, 7, 8, 9
+]
+---------
+one: 1
+two: 2
+rest: [ 3, 4, 5, 7, 8, 9 ]  
+```
+
+</details>
