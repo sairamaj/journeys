@@ -217,4 +217,39 @@ two: 2
 rest: [ 3, 4, 5, 7, 8, 9 ]  
 ```
 
+* using for objects
+```js
+    const myVehicle = {
+      brand: 'Ford',
+      model: 'Mustang',
+      color: 'red'
+    }
+
+    console.log(myVehicle)
+    console.log('-------------------')
+
+    const updateMyVehicle = {
+      type: 'car',
+      year: 2021, 
+      color: 'yellow'
+    }
+    console.log(updateMyVehicle)
+    console.log('---------------------------')
+
+    const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
+    console.log(myUpdatedVehicle)
+```
+```cmd
+  { brand: 'Ford', model: 'Mustang', color: 'red' }
+  -------------------
+  { type: 'car', year: 2021, color: 'yellow' }
+  ---------------------------
+  {
+    brand: 'Ford',
+    model: 'Mustang',
+    color: 'yellow',
+    type: 'car',
+    year: 2021
+  }
+```
 </details>
