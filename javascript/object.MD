@@ -258,4 +258,16 @@ ___
 
     print(person)
     ```
+
+* with default value
+  ```js
+    const pokemon = {
+      id: 1,
+      name: 'Squirtle'
+    };
+
+    //Assigning default value to the type variable
+    const { type = 'Water', name } = pokemon;
+    console.log(type); //Result: Water  
+  ```
 </details>
