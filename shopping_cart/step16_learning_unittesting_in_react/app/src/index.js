@@ -1,13 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { FirstTest } from './components/FirstTest';
+import TestWithMockData from './components/TestWithMockData';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const mockData = [
+  {
+      "id": 1,
+      "first_name": "Fletcher",
+      "last_name": "McVanamy",
+      "email": "mmcvanamy0@e-recht24.de",
+      "age": 30
+    }, {
+      "id": 2,
+      "first_name": "Clarice",
+      "last_name": "Harrild",
+      "email": "charrild1@dion.ne.jp",
+      "age": 35
+    }, 
+]
+
 root.render(
   <React.StrictMode>
-    <FirstTest />
+    <TestWithMockData data={mockData}/>
   </React.StrictMode>
 );
 

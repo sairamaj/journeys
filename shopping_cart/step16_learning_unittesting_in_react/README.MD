@@ -57,14 +57,43 @@ ___
 ___
 
 <details>
-  <summary>1</summay>
+  <summary>component using props</summary>
+
+* __i__ is case sensitive in regular expression
+```js
+const mockData = [
+    {
+        "id": 1,
+        "first_name": "Fletcher",
+        "last_name": "McVanamy",
+        "email": "mmcvanamy0@e-recht24.de",
+        "age": 30
+      }, {
+        "id": 2,
+        "first_name": "Clarice",
+        "last_name": "Harrild",
+        "email": "charrild1@dion.ne.jp",
+        "age": 35
+      }, 
+]
+
+test("List renders successfully", () => {
+    render(<TestWithMockData data={mockData} />)
+    expect(screen.getByText(/fletcher/i)).toBeInTheDocument();
+})
+
+```
 
 </details>
 
 ___
 
 <details>
-  <summary>1</summay>
+  <summary>coverage report</summay>
+
+* remove _App.js_ , _App.test.js_ and reference in _index.js_
+* add TestWithMockDataWithBranch component
+
 
 </details>
 
