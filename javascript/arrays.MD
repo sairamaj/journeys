@@ -303,3 +303,16 @@ ___
     ```
 
 </details>
+
+___
+
+<details>
+  <summary>filter</summary>
+
+```js
+  const x = [1,2,3,4,5,6]
+
+  // print all even numbers
+  console.log( x.filter(n => n%2 ==0))
+```
+</details>
