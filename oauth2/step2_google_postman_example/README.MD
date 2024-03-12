@@ -74,7 +74,7 @@ ___
   * fill client id and client secret.
   * callback url (redirect URI) as
     ```cmd
-        https://accounts.google.com/o/oauth2/token
+        https://oauth.pstmn.io/v1/callback
     ```
   * scope as _profile_
 * Click _Get New Access Token_ button
