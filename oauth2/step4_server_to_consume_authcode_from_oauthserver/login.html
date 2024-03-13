@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Form</title>
 </head>
-<body>
-    <form action="https://example.com/submit" method="POST">
-        <!-- Input fields (if needed) -->
-        <!-- For example: -->
-        <!-- <input type="text" name="username" placeholder="Enter username"> -->
-        <!-- <input type="password" name="password" placeholder="Enter password"> -->
 
+<body>
+    <form action="https://accounts.google.com/o/oauth2/auth" method="POST" align="center">
+        <table align="center">
+            <!-- Input fields (if needed) -->
+            <!-- For example: -->
+            <tr>
+                <td align="right"><label style="font-weight:bold">response_type:</label></td>
+                <td><input type="text" name="response_type" size="75" value="code"><br /></td>
+            </tr>
+
+            <tr>
+                <td align="right"><label style="font-weight:bold">client_id:</label></td>
+                <td><input type="text" name="client_id" size="75"
+                        value="<clientid_here>"><br /></td>
+            </tr>
+
+            <tr>
+                <td align="right"><label style="font-weight:bold">redirect_uri:</label></td>
+                <td><input type="text" name="redirect_uri" size="75" value="http://localhost:5000/callback"><br /></td>
+            </tr>
+
+            <tr>
+                <td align="right"><label style="font-weight:bold">scope:</label></td>
+                <td><input type="text" name="scope" size="75" value="profile"><br /></td>
+            </tr>
+
+            <tr>
+                <td align="right"><label style="font-weight:bold">state:</label></td>
+                <td><input type="text" name="state" size="75" value="state_1234"><br /></td>
+            </tr>
+
+        </table>
         <!-- Submit button -->
         <button type="submit">Submit</button>
     </form>
 </body>
-</html>
 
+</html>

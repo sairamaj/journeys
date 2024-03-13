@@ -46,6 +46,36 @@ ___
 <details>
     <summary>adding /code to consume authorization code</summary>
 
+```python
+@app.route('/callback', methods=['GET'])
+def on_callback_from_authserver():
+    print("callback from auth server")
+    print(f"query string {request.query_string}")
+    code = request.args.get('code')
+    print(f"code:{code}")
+
+    # POST https://api.authorization-server.com/token
+    #   grant_type=authorization_code&
+    #   code=AUTH_CODE_HERE&
+    #   redirect_uri=REDIRECT_URI&
+    #   client_id=CLIENT_ID&
+    #   client_secret=CLIENT_SECRET
+
+    access_token_url = 'https://accounts.google.com/o/oauth2/token'
+    data = {
+    'grant_type': 'authorization_code',
+    'code' : code,
+    'client_id' : '<clientidhere>',
+    'client_secret' : '<client-secret-here>',
+    'redirect_uri' : "http://localhost:5000/callback"
+    }
+    
+    response = requests.post(access_token_url,data)
+    print(response.json())
+    return response.json(),200
+
+```
+
 </details>
 
 ____
@@ -56,3 +86,32 @@ ____
 ![clientcredential_add_uri](./clientcredential_add_uri.png)
 
 </details>
+
+___
+
+<details>
+  <summary>login page</summary>
+
+see the login.html which has parameters to submit below request
+
+```txt
+https://authorization-server.com/auth?response_type=code&
+  client_id=CLIENT_ID&redirect_uri=REDIRECT_URI&scope=photos&state=1234zyx
+```
+
+![login_page](./login_page.png)
+</details>
+
+___
+
+<details>
+ <summary>getting access token</summary>
+
+![post_auth_request](./post_auth_request.png)
+
+![callback](./callback.png)
+
+![access_token](./access_token.png)
+</details>
+
+___
