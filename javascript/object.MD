@@ -251,6 +251,14 @@ ___
     var { name } = person
     console.log(name)
 
+    // extracting name with different name
+    let {name: xname} = person
+    console.log(xname)
+
+    // giving default value in case property does not exists or undefined
+    let { salary: sal = 1000.00 } = person
+    console.log(sal)
+
     // function which takes object and destructures the properties
     function print({ name, age }) {
       console.log(`name:${name} age:${age}`)
